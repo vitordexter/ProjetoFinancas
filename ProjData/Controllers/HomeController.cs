@@ -17,6 +17,14 @@ namespace ProjData.Controllers
             clBuscaDesc busca = new clBuscaDesc();
             var listDesc = busca.buscaDesc();
 
+            if (Session["StatusLogin"] == "CLI")
+            {
+                UserLogado cl = Session["ClienteLogado"] as UserLogado;
+
+                Session["NomeUser"] = cl.Usuario.Nomeuser;
+                Session["SobrenomeUser"] = cl.Usuario.Sobrenomeuser;
+
+            }
 
             double total = 0;
             for (int i = 0; i < listDesc.Count; i++)

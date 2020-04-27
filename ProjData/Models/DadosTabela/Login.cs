@@ -10,7 +10,6 @@ namespace ProjData.Models.DadosTabela
         private string loguin;
         private string senha;
         private string codLogin;
-        private string cargo;
 
         public string Loguin { get => loguin; set => loguin = value; }
         public string Senha { get => senha; set => senha = value; }
