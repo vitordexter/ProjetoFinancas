@@ -1,7 +1,7 @@
 ﻿body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    margin-left: 0; /* IMPORTANTE! Esse elemento elimina todas as margens da página. Sem ela, fica um espaçamento para todos os cantos da pagina. 
+    margin: 0; /* IMPORTANTE! Esse elemento elimina todas as margens da página. Sem ela, fica um espaçamento para todos os cantos da pagina. 
     Ao colocar uma div, por exemplo, ela fica flutuando. */
     overflow-x: hidden;
 }

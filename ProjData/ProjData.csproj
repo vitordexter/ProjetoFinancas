@@ -150,6 +150,9 @@
     </Compile>
     <Compile Include="Models\Conexao.cs" />
     <Compile Include="Models\DadosTabela\Descricao.cs" />
+    <Compile Include="Models\DadosTabela\Login.cs" />
+    <Compile Include="Models\DadosTabela\Usuario.cs" />
+    <Compile Include="Models\Repositorio\CadastraUsuario.cs" />
     <Compile Include="Models\Repositorio\clBuscaDesc.cs" />
     <Compile Include="Models\Repositorio\clCadastraDesc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
