@@ -4,66 +4,52 @@
 
 }
 @Styles.Render("~/Content/CaixaRegistroUsuario.css")
+<div id="page-wrapper chiller-theme toggled">
+    <main class="page-content">
 
-<div class="container register box-shadow-full">
-    <div class="row">
-        <div class="col-md-3 register-left">
-            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
-            <h3>Bem-vindo!</h3>
-            <p>Cadastre-se e em menos de 1 minuto começe a controlar sua vida financeira! ;)</p>
-            <input type="submit" name="" value="Login" /><br />
-        </div>
-        <div class="col-md-9 register-right">
-            <div class="tab-content">
-                <div class="tab-pane fade show active">
-                    <h3 class="register-heading">PREENCHA SEUS DADOS</h3>
-                    <div class="row register-form">
-                        @using (Html.BeginForm("Index", "RegistroUsuario", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm" }))
-                        {
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            @*<input type="text" class="form-control" placeholder="Nome" value="" />*@
-                                            @Html.EditorFor(x => x.Nomeuser, new { htmlAttributes = new { id = "txtNome", type = "text", placeholder = "Nome", @class = "form-control", required = "required" } })
+        @using (Html.BeginForm("Index", "RegistroUsuario", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm" }))
+        {
+        <div class="col-md-12">
+            <div class="box-shadow-full">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                @*<input type="text" class="form-control" placeholder="Nome" value="" />*@
+                                @Html.EditorFor(x => x.Nomeuser, new { htmlAttributes = new { id = "txtNome", type = "text", placeholder = "Nome", @class = "form-control", required = "required" } })
 
-                                        </div>
-                                        <div class="col-md-6">
-                                            @Html.EditorFor(x => x.Sobrenomeuser, new { htmlAttributes = new { id = "txtSobrenome", type = "text", placeholder = "Sobrenome", @class = "form-control", required = "required" } })
-
-                                            @*<input type="text" class="form-control" placeholder="Sobrenome" value="" />*@
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    @*<input type="text" class="form-control" placeholder="E-mail" value="" />*@
-                                    @Html.EditorFor(x => x.Login.Loguin, new { htmlAttributes = new { id = "txtEmail", type = "text", placeholder = "E-mail", @class = "form-control", required = "required" } })
-
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Confirmação de e-mail" value="" />
-                                </div>
-                                <div class="form-group">
-                                    @Html.EditorFor(x => x.Login.Senha, new { htmlAttributes = new { id = "txtSenha", type = "password", placeholder = "Sobrenome", @class = "form-control", required = "required" } })
-
-                                    @*<input type="password" class="form-control" placeholder="Senha" value="" />*@
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirme sua senha" value="" />
-                                </div>
-                                <div class="form-group">
-                                    @Html.EditorFor(x => x.Renda, new { htmlAttributes = new { id = "txtRenda", type = "text", placeholder = "Renda mensal (se não tiver, deixe em branco)", @class = "form-control" } })
-
-                                    @*<input type="text" class="form-control" placeholder="Renda mensal (se não tiver, deixe em branco)" value="" />*@
-
-                                </div>
-                                <input type="submit" class="btnRegister" value="CADASTRAR-ME" />
                             </div>
-                        }
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <div class="col-md-6">
+                                @Html.EditorFor(x => x.Sobrenomeuser, new { htmlAttributes = new { id = "txtSobrenome", type = "text", placeholder = "Sobrenome", @class = "form-control", required = "required" } })
 
-    </div>
+                                @*<input type="text" class="form-control" placeholder="Sobrenome" value="" />*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @*<input type="text" class="form-control" placeholder="E-mail" value="" />*@
+                        @Html.EditorFor(x => x.Login.Loguin, new { htmlAttributes = new { id = "txtEmail", type = "text", placeholder = "E-mail", @class = "form-control", required = "required" } })
+
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Confirmação de e-mail" value="" />
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(x => x.Login.Senha, new { htmlAttributes = new { id = "txtSenha", type = "password", placeholder = "Sobrenome", @class = "form-control", required = "required" } })
+
+                        @*<input type="password" class="form-control" placeholder="Senha" value="" />*@
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirme sua senha" value="" />
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(x => x.Renda, new { htmlAttributes = new { id = "txtRenda", type = "text", placeholder = "Renda mensal (se não tiver, deixe em branco)", @class = "form-control" } })
+
+                        @*<input type="text" class="form-control" placeholder="Renda mensal (se não tiver, deixe em branco)" value="" />*@
+
+                    </div>
+                    <input type="submit" class="btnRegister" value="CADASTRAR-ME" />
+                </div>
+          </div>
+        }
+    </main>
+</div>

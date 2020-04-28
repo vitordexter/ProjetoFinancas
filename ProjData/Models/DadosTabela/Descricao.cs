@@ -16,6 +16,8 @@ namespace ProjData.Models.DadosTabela
         private string tipo;
         private string forma_pgto;
         private double preco;
+        private string coduser;
+
 
         public string Descr { get => descr; set => descr = value; }
         public string CodDesc { get => codDesc; set => codDesc = value; }
@@ -26,5 +28,6 @@ namespace ProjData.Models.DadosTabela
         public string Forma_pgto { get => forma_pgto; set => forma_pgto = value; }
         public double Preco { get => preco; set => preco = value; }
         public string Datac { get => datac; set => datac = value; }
+        public string Coduser { get => coduser; set => coduser = value; }
     }
 }

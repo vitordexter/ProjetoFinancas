@@ -183,3 +183,4 @@ C:\Users\vitor\Desktop\Projetos\ProjData\ProjData\bin\pt-br\System.Web.WebPages.
 C:\Users\vitor\Desktop\Projetos\ProjData\ProjData\obj\Debug\ProjData.csproj.CopyComplete
 C:\Users\vitor\Desktop\Projetos\ProjData\ProjData\obj\Debug\ProjData.dll
 C:\Users\vitor\Desktop\Projetos\ProjData\ProjData\obj\Debug\ProjData.pdb
+C:\Users\vitor\Desktop\Projetos\ProjData\ProjData\obj\Debug\ProjData.csprojAssemblyReference.cache

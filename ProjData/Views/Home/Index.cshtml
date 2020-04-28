@@ -2,64 +2,109 @@
 @{
     ViewBag.Title = "Home Page";
 
-    double gasto = (double) Session["TotalGasto"];
-    string dataAtt = (string) Session["dataAtt"];
+    double gasto = (double)Session["TotalGasto"];
+    string dataAtt = (string)Session["dataAtt"];
 }
-
-
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+@Styles.Render("~/Content/CardsStatus.css")
 <body>
-    <br />
-    <div class="box-conteudo">
-        <div class="row">
-            <p style="margin-left: 15px;">
-                <h2>Olá, @Session["NomeUser"] Painel de Gastos</h2>
-                <br /><br /><br />
-            </p>
+    @*<br />
+        <div class="box-conteudo">
+            <div class="row">
+                <p style="margin-left: 15px;">
+                    <h2>Olá, @Session["NomeUser"] Painel de Gastos</h2>
+                    <br /><br /><br />
+                </p>
+            </div>
+            <div class="container">
+                <div class="row" style="margin: 0 auto;">
+                    <div class="card" style="width: 30%; margin: auto; ">
+                        <div class="card-body">
+                            <h5 class="card-title">R$ @gasto</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Gasto total desde jan/2020.</h6>
+                            <p class="card-text">Atualizado: @dataAtt</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 30%; margin-left:15px; margin: 0 auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">R$ 1.000,00</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Gasto total desde jan/2020.</h6>
+                            <p class="card-text">Atualizado: 01/01/2020</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 30%; margin-left:15px; margin: 0 auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">R$ 1.000,00</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Gasto total desde jan/2020.</h6>
+                            <p class="card-text">Atualizado: 01/01/2020</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-        <div class="container">
-            <div class="row" style="margin: 0 auto;">
-                <div class="card" style="width: 30%; margin: auto; ">
-                    <div class="card-body">
-                        <h5 class="card-title">R$ @gasto</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Gasto total desde jan/2020.</h6>
-                        <p class="card-text">Atualizado: @dataAtt</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 30%; margin-left:15px; margin: 0 auto;">
-                    <div class="card-body">
-                        <h5 class="card-title">R$ 1.000,00</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Gasto total desde jan/2020.</h6>
-                        <p class="card-text">Atualizado: 01/01/2020</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 30%; margin-left:15px; margin: 0 auto;">
-                    <div class="card-body">
-                        <h5 class="card-title">R$ 1.000,00</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Gasto total desde jan/2020.</h6>
-                        <p class="card-text">Atualizado: 01/01/2020</p>
-                    </div>
-                </div>
+        <br />
+        <div class="box-conteudo">
+            <div class="col-md-12">
+                <div class="row">
 
-                <div class="box-shadow-full" style="width: 100%; margin-top:30px;">
-                    <table id="mytable" class="table table-striped table-bordered table-list">
-                        <thead>
-                            <tr>
+                </div>
+            </div>
+        </div>*@
+    <main class="page-content">
+        <div class="box-conteudo">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card-counter primary">
+                            <i class="fa fa-code-fork"></i>
+                            <span class="count-numbers">R$ @gasto</span>
+                            <span class="count-name">Total de Gastos</span>
+                        </div>
+                    </div>
 
-                                <th class="hidden-xs">Data</th>
-                                <th class="col-text">Descrição</th>
-                                <th class="hidden-xs">Loja</th>
-                                <th class="col-text">Categoria</th>
-                                <th class="col-text">Necessidade</th>
-                                <th class="col-text">Tipo</th>
-                                <th class="col-text">Forma de Pagamento</th>
-                                <th class="col-text">Preço</th>    
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var desc in Model)
-                            {
+                    <div class="col-md-3">
+                        <div class="card-counter danger">
+                            <i class="fa fa-ticket"></i>
+                            <span class="count-numbers"></span>
+                            <span class="count-name">Instances</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card-counter success">
+                            <i class="fa fa-database"></i>
+                            <span class="count-numbers">6875</span>
+                            <span class="count-name">Data</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card-counter info">
+                            <i class="fa fa-users"></i>
+                            <span class="count-numbers">35</span>
+                            <span class="count-name">Users</span>
+                        </div>
+                    </div>
+                </div>
+            <div class="box-shadow-full" style="width: 100%; margin-top:30px;">
+                <table id="mytable" class="table table-striped table-bordered table-list">
+                    <thead>
+                        <tr>
+
+                            <th class="hidden-xs">Data</th>
+                            <th class="col-text">Descrição</th>
+                            <th class="hidden-xs">Loja</th>
+                            <th class="col-text">Categoria</th>
+                            <th class="col-text">Necessidade</th>
+                            <th class="col-text">Tipo</th>
+                            <th class="col-text">Forma de Pagamento</th>
+                            <th class="col-text">Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var desc in Model)
+                        {
                             <tr>
                                 <td>@desc.Datac</td>
                                 <td>@desc.Descr</td>
@@ -70,20 +115,11 @@
                                 <td>@desc.Forma_pgto</td>
                                 <td>@desc.Preco</td>
                             </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
-    <br />
-    <div class="box-conteudo">
-        <div class="col-md-12">
-            <div class="row">
-
-            </div>
-        </div>
-    </div>
-
+    </main>
 </body>
+

@@ -15,18 +15,18 @@ namespace ProjData.Models.Repositorio
         {
             try
             {
-                MySqlCommand my = new MySqlCommand("insert into tbDados (datac,Descr,loja,categoria,necessidade,tipo,forma_pgto,preco) values (@data,@desc,@loja,@categoria,@necessidade," +
-                    "@tipo,@formapgto,@preco)", conexao.MyConectarBD());
+                MySqlCommand my = new MySqlCommand("insert into tbDados (datac,Descr,loja,tipo,categ,nece,forma_pgto,preco,codusuario) values (@data,@desc,@loja,@tipo,@categoria,@necessidade," +
+                    "@formapgto,@preco,@codCli)", conexao.MyConectarBD());
 
                 my.Parameters.Add("@data", MySqlDbType.VarChar).Value = descricao.Datac;
                 my.Parameters.Add("@desc", MySqlDbType.VarChar).Value = descricao.Descr;
                 my.Parameters.Add("@loja", MySqlDbType.VarChar).Value = descricao.Loja;
+                my.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = descricao.Tipo;
                 my.Parameters.Add("@categoria", MySqlDbType.VarChar).Value = descricao.Categoria;
                 my.Parameters.Add("@necessidade", MySqlDbType.VarChar).Value = descricao.Necessidade;
-                my.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = descricao.Tipo;
                 my.Parameters.Add("@formapgto", MySqlDbType.VarChar).Value = descricao.Forma_pgto;
                 my.Parameters.Add("@preco", MySqlDbType.Decimal).Value = descricao.Preco;
-
+                my.Parameters.Add("@codCli", MySqlDbType.VarChar).Value = descricao.Coduser;
                 my.ExecuteNonQuery();
                 conexao.MyDesconectarBD();
                 return true;

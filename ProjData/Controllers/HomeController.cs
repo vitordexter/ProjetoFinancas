@@ -12,10 +12,13 @@ namespace ProjData.Controllers
     {
 
         string dataAtt;
+
+        
         public ActionResult Index()
         {
+            Usuario user = new Usuario();
             clBuscaDesc busca = new clBuscaDesc();
-            var listDesc = busca.buscaDesc();
+
 
             if (Session["StatusLogin"] == "CLI")
             {
@@ -26,6 +29,15 @@ namespace ProjData.Controllers
 
             }
 
+            if(Session["ClienteLogado"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+
+            }
+
+            UserLogado us = Session["ClienteLogado"] as UserLogado;
+            var listDesc = busca.buscaDesc(int.Parse(us.Usuario.Coduser));
+
             double total = 0;
             for (int i = 0; i < listDesc.Count; i++)
             {
@@ -35,6 +47,7 @@ namespace ProjData.Controllers
 
             Session["dataAtt"] = dataAtt;
             Session["TotalGasto"] = total;
+
 
             return View(listDesc);
         }
@@ -49,6 +62,9 @@ namespace ProjData.Controllers
         [HttpPost]
         public ActionResult PageForm(Descricao descricao)
         {
+            UserLogado cl = Session["ClienteLogado"] as UserLogado;
+            descricao.Coduser = cl.Usuario.Coduser;
+
             if (clCadDesc.insertCadastro(descricao) == false)
             {
 
@@ -60,6 +76,7 @@ namespace ProjData.Controllers
             else
             {
                 // TempData["StatusCadastro"] = "OK";
+
                 ModelState.Clear();
                 return RedirectToAction("Index", "Home");
             }

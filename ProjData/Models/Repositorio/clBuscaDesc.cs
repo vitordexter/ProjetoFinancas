@@ -12,17 +12,18 @@ namespace ProjData.Models.Repositorio
     {
 
         Conexao conexao = new Conexao();
-        public List<Descricao> buscaDesc()
+        public List<Descricao> buscaDesc(int codUser)
         {
             try
             {
-                MySqlCommand select = new MySqlCommand(@"select * from tbDados", conexao.MyConectarBD());
+                MySqlCommand select = new MySqlCommand(@"select * from tbDados where codUsuario = @codUser", conexao.MyConectarBD());
                 List<Descricao> descricoes = new List<Descricao>();
+
+                select.Parameters.Add("@codUser", MySqlDbType.Int16).Value = codUser;
 
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(select);
                 da.Fill(dt);
-
 
                 foreach (DataRow row in dt.Rows)
                 {

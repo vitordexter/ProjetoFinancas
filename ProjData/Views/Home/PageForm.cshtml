@@ -2,30 +2,33 @@
 @{
     ViewBag.Title = "PageForm";
 }
-
-<div class="box-conteudo">
-    <div class="row">
-        <p style="margin-left: 15px;">
-            <h2>Painel de Gastos</h2>
-            <br /><br /><br />
-        </p>
-    </div>
-    <div class="container">
-        <div class="row" style="margin: 0 auto;">
-            <div class="box-shadow-full" style="width: 100%; margin-top:30px;">
-                @using (Html.BeginForm("PageForm", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm" }))
-                {
-                    @Html.EditorFor(x => x.Datac, new { htmlAttributes = new { id = "txtNome", type = "date", placeholder = "Digite a data da compra", @class = "form-control", required = "required" } })
-                    @Html.EditorFor(x => x.Descr, new { htmlAttributes = new { id = "txtDesc", type = "text", placeholder = "Digite a descrição da compra", @class = "form-control", required = "required" } })
-                    @Html.EditorFor(x => x.Loja, new { htmlAttributes = new { id = "txtLoja", type = "text", placeholder = "Digite a loja", @class = "form-control", required = "required" } })
-                    @Html.EditorFor(x => x.Categoria, new { htmlAttributes = new { id = "txtCategoria", type = "text", placeholder = "Digite a categoria", @class = "form-control", required = "required" } })
-                    @Html.EditorFor(x => x.Necessidade, new { htmlAttributes = new { id = "txtNecessidade", type = "text", placeholder = "Digite a necessidade", @class = "form-control", required = "required" } })
-                    @Html.EditorFor(x => x.Tipo, new { htmlAttributes = new { id = "txtTipo", type = "text", placeholder = "Digite o tipo", @class = "form-control", required = "required" } })
-                    @Html.EditorFor(x => x.Forma_pgto, new { htmlAttributes = new { id = "txtFormaPgto", type = "text", placeholder = "Digite a forma de pagamento", @class = "form-control", required = "required" } })
-                    @Html.EditorFor(x => x.Preco, new { htmlAttributes = new { id = "txtPreco", type = "text", placeholder = "Digite o preço", @class = "form-control", required = "required" } })
-                    <button id="cadastrar" type="submit" class="button button-a button-big button-rouded">CADASTRAR-ME</button>
-                }
-            </div>
+    <body>
+        <div id="page-wrapper chiller-theme toggled">
+            <main class="page-content">
+                <div class="box-conteudo">
+                    <div class="row">
+                        <p>
+                            <h2>Cadastrar novo lançamento financeiro</h2>
+                            <br />
+                        </p>
+                    </div>
+                    <div class="row" style="margin: 0 auto;">
+                        <div class="box-shadow-full" style="width: 100%;">
+                            @using (Html.BeginForm("PageForm", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm" }))
+                            {
+                                @Html.EditorFor(x => x.Datac, new { htmlAttributes = new { id = "txtNome", type = "date", placeholder = "Digite a data da compra", @class = "form-control", required = "required" } })
+                                @Html.EditorFor(x => x.Descr, new { htmlAttributes = new { id = "txtDesc", type = "text", placeholder = "Digite a descrição da compra", @class = "form-control", required = "required" } })
+                                @Html.EditorFor(x => x.Loja, new { htmlAttributes = new { id = "txtLoja", type = "text", placeholder = "Digite a loja", @class = "form-control", required = "required" } })
+                                @Html.EditorFor(x => x.Categoria, new { htmlAttributes = new { id = "txtCategoria", type = "text", placeholder = "Digite a categoria", @class = "form-control", required = "required" } })
+                                @Html.EditorFor(x => x.Necessidade, new { htmlAttributes = new { id = "txtNecessidade", type = "text", placeholder = "Digite a necessidade", @class = "form-control", required = "required" } })
+                                @Html.EditorFor(x => x.Tipo, new { htmlAttributes = new { id = "txtTipo", type = "text", placeholder = "Digite o tipo", @class = "form-control", required = "required" } })
+                                @Html.EditorFor(x => x.Forma_pgto, new { htmlAttributes = new { id = "txtFormaPgto", type = "text", placeholder = "Digite a forma de pagamento", @class = "form-control", required = "required" } })
+                                @Html.EditorFor(x => x.Preco, new { htmlAttributes = new { id = "txtPreco", type = "text", placeholder = "Digite o preço", @class = "form-control", required = "required" } })
+                                <button id="cadastrar" type="submit" class="button button-a button-big button-rouded">CADASTRAR-ME</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
-    </div>
-</div>
+    </body>      
